@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from gift.models import User, Cart, Gift, News, Gift_image, Room
+from gift.models import User, Cart, Gift, News, Gift_image, Room, Cart_product
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -31,4 +31,10 @@ class GiftImageSerializer(serializers.ModelSerializer):
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
+        fields = '__all__'
+
+class CartProductSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Cart_product
         fields = '__all__'
