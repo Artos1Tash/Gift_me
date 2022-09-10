@@ -26,7 +26,8 @@ INSTALLED_APPS = [
 
     # my apps
     'gift',
-
+    'auth_app',
+    
     'rest_framework',
 ]
 
