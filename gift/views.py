@@ -1,8 +1,7 @@
-from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
-from gift.models import User, Room, Cart, Gift, News, Gift_image
+from gift.models import User, Room, Cart, Gift, News, Gift_image, Cart_product
 from gift.serializers import UserSerializer, NewsSerializer, GiftSerializer, CartSerializer, RoomSerializer, \
-    GiftImageSerializer
+    GiftImageSerializer, CartProductSerializer
 
 
 class UserView(ModelViewSet):
@@ -20,6 +19,10 @@ class GiftView(ModelViewSet):
 class CartView(ModelViewSet):
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
+
+class CartProductView(ModelViewSet):
+    queryset =  Cart_product.objects.all()
+    serializer_class = CartProductSerializer
 
 class RoomView(ModelViewSet):
     queryset = Room.objects.all()
